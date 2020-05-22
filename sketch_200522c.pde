@@ -2,7 +2,7 @@ Shape shape;
 enum Shapes { L_SHAPE, CUBE, STRAIGHT  }
 
 void setup(){
-  shape = new Shape(Shapes.L_SHAPE);
+  shape = new Shape(Shapes.STRAIGHT);
   size(200,400);
  
 }

@@ -2,6 +2,8 @@ Block block;
 
 class Shape{
  ArrayList<Block> blocks = new ArrayList<Block>();
+ private float x;
+ private float y;
 
 
  public Shape(Shapes shape){
@@ -66,6 +68,7 @@ class Shape{
     blocks.add(block = new Block(25,15));
  }
  
+
 
     
  }
