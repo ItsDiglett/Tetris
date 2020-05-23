@@ -1,16 +1,20 @@
 Shape shape;
 enum Shapes { L_SHAPE, CUBE, STRAIGHT  }
 
+
 void setup(){
   shape = new Shape(Shapes.STRAIGHT);
-  size(200,400);
+  size(200,4005);
  
 }
 
 void draw () {
    background(100,10,200);
    shape.display();
-   
+   for(float i = 0; i < 400; ++i){
+     shape.gravity();
+   }
+     
 }
 
 //We can refactor this by returning the key and having a function determine which way to move

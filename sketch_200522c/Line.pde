@@ -42,8 +42,14 @@ class Shape{
   
   public void moveLeft(){
      for (Block i: blocks){
-     i.update(-3,0);
+       i.update(-3,0);
      }
+  }
+  public void gravity(){
+     for(Block i: blocks){
+       i.update(0,0.003);
+     }
+ 
   }
   
  public void straightCreate(){
