@@ -8,9 +8,10 @@ enum Shapes { L_SHAPE, CUBE, STRAIGHT, T_SHAPE, N_SHAPE  }
 
 
 void setup(){
+  Shapes generate = generation();
   game = new GameManager();
-  shapemanager = new ShapeManager(Shapes.L_SHAPE);
-  size(200,4005);
+  shapemanager = new ShapeManager(generate);
+  size(200,400);
  
 
 }
