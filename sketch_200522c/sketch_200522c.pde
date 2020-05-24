@@ -1,15 +1,18 @@
+GameManager game;
 Shape shape;
 ShapeManager shapemanager;
-import java.util.Random; 
+import java.util.Random;
+
 enum Shapes { L_SHAPE, CUBE, STRAIGHT, T_SHAPE, N_SHAPE  }
 
 
 
 void setup(){
-  Shapes generate = generation();
-  shapemanager = new ShapeManager(generate);
-  size(200,400);
+  game = new GameManager();
+  shapemanager = new ShapeManager(Shapes.L_SHAPE);
+  size(200,4005);
  
+
 }
 
 void draw () {
@@ -27,12 +30,10 @@ void keyPressed(){
     case 's': shapemanager.moveDown();break;
     case 'a': shapemanager.moveLeft();break;
     case 'd': shapemanager.moveRight();break;
-    case 'w': shapemanager.display();break;
   }
+}
 
-  }
-  
-  public Shapes generation(){
+public Shapes generation(){
     Random rand = new Random();
     int c = rand.nextInt(6);
     if(c == 1){
@@ -51,7 +52,7 @@ void keyPressed(){
       return Shapes.N_SHAPE;
     }
     
-  }
+}
   
 
   

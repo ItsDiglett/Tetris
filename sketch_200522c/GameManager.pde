@@ -2,7 +2,7 @@ enum gameState { GAME_START, GAME_SETUP, GAME_PLAYING, GAME_ENDING, GAME_END }
 
 class GameManager {
   Player currUser;
-  //ScoreManager scoreManager = new ScoreManager();
+  ScoreManager scoreManager = new ScoreManager();
   //Map map = new Map();
   //LeaderBoard leaderBoard = new LeaderBoard();
   
@@ -29,7 +29,7 @@ class GameManager {
   
   public void  gameSetup() {
     currUser = new Player();
-    //scoreManager.resetScore();
+    scoreManager.resetScore();
     //map.reset();
     
     currState = gameState.GAME_PLAYING;

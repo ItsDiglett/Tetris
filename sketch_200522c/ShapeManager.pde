@@ -1,12 +1,12 @@
-import java.util.Random;
 class ShapeManager{
   ArrayList<Block> blocks;
-  
+
+ 
   public ShapeManager(Shapes shape){
-    blocks = new Shape(shape).getBlocks();
-        
+       blocks = new Shape(shape).getBlocks();
+
   }
-  //We're gonna work on this later <3 aww <3
+  
   public void moveDown(){
      for (Block i: blocks){
        i.update(0,3);
@@ -19,6 +19,7 @@ class ShapeManager{
        i.update(3,0);
     }
   }
+
   
   public void moveLeft(){
      for (Block i: blocks){
@@ -38,5 +39,8 @@ class ShapeManager{
        i.display();      
    }   
   }
- 
+
+
+  
+  
 }
