@@ -1,11 +1,12 @@
+GameManager game;
 Shape shape;
 enum Shapes { L_SHAPE, CUBE, STRAIGHT  }
 
 
 void setup(){
   shape = new Shape(Shapes.STRAIGHT);
-  size(200,4005);
- 
+  size(800,800);
+  game = new GameManager();
 }
 
 void draw () {
@@ -24,5 +25,4 @@ void keyPressed(){
     case 'a': shape.moveLeft();break;
     case 'd': shape.moveRight();break;
   }
-
-  }
+}

@@ -19,6 +19,9 @@ class Shape{
    }
    
  }
+ public ArrayList<Block> getBlocks() {
+   return blocks;
+ }
   
      
  public void display(){
@@ -30,7 +33,6 @@ class Shape{
   public void moveDown(){
      for (Block i: blocks){
        i.update(0,3);
-       
      }
   }
   

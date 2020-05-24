@@ -5,8 +5,6 @@ class Player {
     name = inputInitials();
   }
   
-  
-  
   public String inputInitials() {
     class Initials extends Button {
       char initial;
