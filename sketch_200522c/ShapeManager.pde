@@ -1,4 +1,4 @@
-
+import java.util.Random;
 class ShapeManager{
   ArrayList<Block> blocks;
   
@@ -38,8 +38,5 @@ class ShapeManager{
        i.display();      
    }   
   }
-
-
-  
-  
+ 
 }

@@ -17,6 +17,12 @@ class Shape{
    else if(shape == Shapes.CUBE){
      cubeCreate();
    }
+   else if(shape == Shapes.T_SHAPE){
+     tCreate();
+   }
+   else if(shape == Shapes.N_SHAPE){
+     nCreate();
+   }
    
  }
  public ArrayList<Block> getBlocks(){
@@ -43,6 +49,20 @@ class Shape{
     blocks.add(block = new Block(25,0)); 
     blocks.add(block = new Block(10,15));
     blocks.add(block = new Block(25,15));
+ }
+ 
+ public void tCreate(){
+   blocks.add(block = new Block(10, 0));
+   blocks.add(block = new Block(25,0));
+   blocks.add(block = new Block(40,0));
+   blocks.add(block = new Block(25,15));
+ }
+ 
+ public void nCreate(){
+   blocks.add(block = new Block(10,0));
+   blocks.add(block = new Block(10,15));
+   blocks.add(block = new Block(25,0));
+   blocks.add(block = new Block(25,-15));
  }
  
 
