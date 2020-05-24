@@ -17,12 +17,16 @@ void setup(){
 }
 
 void draw () {
-   background(100,10,200);
-   shapemanager.display();
-   for (int i = 0; i < 100; ++i){
-     shapemanager.gravity();
-   }
-     
+  
+  
+  
+  
+  
+   //background(100,10,200);
+   //shapemanager.display();
+   //for (int i = 0; i < 100; ++i){
+   //  shapemanager.gravity();
+   //}
 }
 
 //We can refactor this by returning the key and having a function determine which way to move

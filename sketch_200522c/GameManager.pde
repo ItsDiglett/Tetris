@@ -16,7 +16,9 @@ class GameManager {
   public void runGame() {
     switch (currState) {
       case GAME_START: gameStart(); break;
+      case GAME_SETUP: gameSetup(); break;
       case GAME_PLAYING: playGame(); break;
+      case GAME_ENDING: gameEnding(); break;
       case GAME_END: gameEnd(); break;
     }
   }
