@@ -19,6 +19,7 @@ class Shape{
    }
    
  }
+<<<<<<< HEAD
  public ArrayList<Block> getBlocks() {
    return blocks;
  }
@@ -54,6 +55,12 @@ class Shape{
  
   }
   
+=======
+ public ArrayList<Block> getBlocks(){
+   return blocks;
+ }
+     
+>>>>>>> 65674f0f777ee77de67f49a1abb383b36ed58eca
  public void straightCreate(){
     blocks.add(block = new Block(10,0));
     blocks.add(block = new Block(25,0));
