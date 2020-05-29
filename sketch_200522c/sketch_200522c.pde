@@ -11,13 +11,12 @@ void setup(){
   Shapes generate = generation();
   game = new GameManager();
   shapemanager = new ShapeManager(generate);
-  size(200,400);
- 
+  size(800,800);
 
 }
 
 void draw () {
-  
+  game.runGame();
   
   
   

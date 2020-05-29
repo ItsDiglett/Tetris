@@ -26,7 +26,8 @@ class GameManager {
   public void gameStart() {
     //starting menu to code later
     //will have button to push to next stage
-    
+    currState = gameState.GAME_SETUP;
+    println("game Start Done");
   }
   
   public void  gameSetup() {
@@ -35,17 +36,23 @@ class GameManager {
     //map.reset();
     
     currState = gameState.GAME_PLAYING;
+    println("game setup done");
   }
   
   public void playGame() {
-    
+    currState = gameState.GAME_ENDING;
+    println("play game");
   }
   
   public void gameEnding() {
     //leaderBoard.add(scoreManager.getScore(), currUser.getName);
+    currState = gameState.GAME_END;
+    println("game ending done");
   }
   
   public void gameEnd() {
     //leaderboard.display();
+    currState = gameState.GAME_START;
+    println("game end done");
   }
 }

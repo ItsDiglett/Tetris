@@ -54,6 +54,7 @@ class Player {
     String inits = "";
     boolean isSelecting = true;
     //loop for selecting initials
+    print("while loop starting");
     while(isSelecting) {
       background(50);
       for (Initials i: letters) {
@@ -75,6 +76,7 @@ class Player {
         }
       }
     }
+    print("while loop ended");
     return inits;
   }
 }

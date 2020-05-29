@@ -1,3 +1,5 @@
+import java.util.*;
+
 class LeaderBoard {
   class UsersDetails {
     String name;
@@ -15,7 +17,7 @@ class LeaderBoard {
     } 
   }
   
-  HashMap<Integer,UsersDetails> board = new HashMap<Integer,UsersDetails>();
+  TreeMap<Integer,UsersDetails> board = new TreeMap<Integer,UsersDetails>();
   int displayAmount = 10;
   
   public LeaderBoard() {
@@ -27,21 +29,43 @@ class LeaderBoard {
     }
   }
   public void display() {
-    //bd is boarder distance
     
     boolean isShowing = true;
     
+    
+    //bd is boarder distance
+    int bd = 10;
+    int xSpacing = 100;
+    int ySpacing;
+    ySpacing = (height + bd*2)/displayAmount;
+    int xDefault = width/2;
+    int yDefault = bd*2 + ySpacing;
+    
+    GenButton doneBut = new GenButton(width/2, height-ySpacing,120,80,"Done");
+    
     while (isShowing) {
-      int bd = 10;
-      int xSpacing = 100;
-      int ySpacing;
-      ySpacing = (height + bd*2)/displayAmount;
       
       push();
       textMode(CENTER);
       background(10);
       rect(bd,bd,width-bd,height-bd);
-      //text;
+      doneBut.display();
+      text("Initials", xDefault, yDefault);
+      text("Score", xDefault - xSpacing, yDefault);
+      text("Max Combo", xDefault + xSpacing, yDefault);
+      int i = 1;
+      for(Map.Entry position :board.entrySet()) {  
+        //UsersDetails user = position.getValue();
+        text(position.getKey().toString(), xDefault - xSpacing, yDefault + (ySpacing*i));
+        //text(position.getValue().getName(), xDefault, yDefault + (ySpacing*i));
+        //text(position.getValue().getCombo(), xDefault + xSpacing, yDefault + (ySpacing*i));
+        ++i;
+      }
+      if (mousePressed) {
+        if (doneBut.pressCheck(mouseX, mouseY)) {
+           isShowing = false;
+        }
+      }
     }
   }
 }
