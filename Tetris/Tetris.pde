@@ -1,16 +1,20 @@
+import java.util.Random;
+
 GameManager game;
 Shape shape;
 ShapeManager shapemanager;
-import java.util.Random;
+int backgroundColour;
 
 enum Shapes { L_SHAPE, CUBE, STRAIGHT, T_SHAPE, N_SHAPE  }
 
 
 
 void setup(){
+  ScreenManager.setSketch(this);
   Shapes generate = generation();
   game = new GameManager();
   shapemanager = new ShapeManager(generate);
+  backgroundColour = 40;
   size(800,800);
 
 }
