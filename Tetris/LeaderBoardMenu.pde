@@ -6,7 +6,7 @@ class LeaderboardMenu extends ScreenManager {
   
   public LeaderboardMenu(Leaderboard leaderboard) {
     this.leaderboard = leaderboard;
-    bd = 10;
+    bd = 20;
     xSpacing = 150;
     ySpacing = (height/2 + bd*2)/leaderboard.getDisplayAmount();
     xDefault = width/2;
@@ -23,14 +23,13 @@ class LeaderboardMenu extends ScreenManager {
         game.nextState();
       }
     }
-    
-    
   }
+  
   public void display() {
     
     background(backgroundColour);
     fill(backgroundColour+10);
-    rect(bd,bd,width-bd*2,height-bd*2);
+    rect(width/2,height/2,width-bd*2,height-bd*2);
     for (Button but: buttons) {
       but.display();
     }
@@ -39,13 +38,13 @@ class LeaderboardMenu extends ScreenManager {
     text("Initials", xDefault, yDefault);
     text("Score", xDefault - xSpacing, yDefault);
     text("Max Combo", xDefault + xSpacing, yDefault);
-    int i = 1;
+    int i = leaderboard.getBoard().size();
     for(Map.Entry<Integer, UsersDetails> position : leaderboard.getBoard().entrySet()) {  
       UsersDetails user = position.getValue();
       text(position.getKey().toString(), xDefault - xSpacing, yDefault + (ySpacing*i));
       text(user.getName(), xDefault, yDefault + (ySpacing*i));
       text(user.getCombo(), xDefault + xSpacing, yDefault + (ySpacing*i));
-      ++i;
+      --i;
     }
   } 
 }

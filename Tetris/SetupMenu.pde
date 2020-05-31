@@ -6,9 +6,10 @@ class SetupMenu extends ScreenManager {
     
     int wid = 60;
     int hei = 80;
-    int inputX = height/2 - wid/2;
-    int inputY = width/2 - hei/2;
     int spacing = 20;
+    int inputX = height/2;
+    int inputY = width/2;
+    
     
     inputX -= wid + spacing;
     for (int i = 0; i < 3; ++i) {

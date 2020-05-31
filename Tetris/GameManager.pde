@@ -90,7 +90,7 @@ class GameManager {
   }
   
   public void gameEndFunc() {
-    //leaderBoard.add(scoreManager.getScore(), currUser.getName);
+    leaderboard.addToBoard(scoreManager.getScore(), currUser.getName(), scoreManager.getMaxCombo());
     menu = new LeaderboardMenu(leaderboard);
     nextState();
   }

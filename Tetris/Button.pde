@@ -11,11 +11,12 @@ class Button {
   }
  
   public void display() {
-     rect(x,y,w,h);
+    rectMode(CENTER);
+    rect(x,y,w,h);
   }
   public boolean pressCheck(float mx, float my) {
-    if (mx >= x && mx <= x+w) {
-      if (my >= y && my <= y+h) {
+    if (mx >= x-w/2 && mx <= x+w/2) {
+      if (my >= y-h/2 && my <= y+h/2) {
         onPress();
         return true;
       }
@@ -57,12 +58,14 @@ class Initial extends Button {
   }
   @Override
   public void display() {
-     rect(x,y,w,h);
-     push();
-     fill(10);
-     textAlign(CENTER, CENTER);
-     text(initial,x+w/2,y+h/2);
-     pop();
+    
+    rectMode(CENTER);
+    rect(x,y,w,h);
+    push();
+    fill(10);
+    textAlign(CENTER, CENTER);
+    text(initial,x,y);
+    pop();
   }
   @Override
   public void onPress() {

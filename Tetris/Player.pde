@@ -8,5 +8,8 @@ class Player {
   public void inputInitials(String name) {
     this.name = name;
   }
+  public String getName() {
+    return name;
+  }
   
 }
