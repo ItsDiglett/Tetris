@@ -5,7 +5,7 @@ class GameManager {
   ScoreManager scoreManager = new ScoreManager();
   ScreenManager menu;
   //Map map = new Map();
-  //LeaderBoard leaderBoard = new LeaderBoard();
+  Leaderboard leaderboard = new Leaderboard();
   
   gameState currState = gameState.GAME_START;
   
@@ -29,10 +29,7 @@ class GameManager {
       case GAME_SETUP_MENU: currState = gameState.GAME_PLAYING; break;
       
       case GAME_PLAYING: currState = gameState.GAME_PLAYING_MENU; break;
-      case GAME_PLAYING_MENU: currState = gameState.GAME_ENDING; break;
-      
-      case GAME_ENDING: currState = gameState.GAME_ENDING_MENU; break;
-      case GAME_ENDING_MENU: currState = gameState.GAME_END; break;
+      case GAME_PLAYING_MENU: currState = gameState.GAME_END; break;
       
       case GAME_END: currState = gameState.GAME_END_MENU; break;
       case GAME_END_MENU: currState = gameState.GAME_START; break;
@@ -48,14 +45,11 @@ class GameManager {
       case GAME_SETUP: gameSetupFunc(); break;
       case GAME_SETUP_MENU: gameSetup(); break;
       
-      case GAME_PLAYING: playGame(); break;
-      case GAME_PLAYING_MENU:  break;
+      case GAME_PLAYING: playGameFunc(); break;
+      case GAME_PLAYING_MENU: playGame();  break;      
       
-      case GAME_ENDING: gameEnding(); break;
-      case GAME_ENDING_MENU:  break;
-      
-      case GAME_END: gameEnd(); break;
-      case GAME_END_MENU:  break;
+      case GAME_END: gameEndFunc(); break;
+      case GAME_END_MENU: gameEnd(); break;
     }
   }
   
@@ -67,8 +61,7 @@ class GameManager {
   
   public void gameStart() {
     menu.display();
-  }
-  
+  } 
   
   public void  gameSetupFunc() {
     currUser = new Player();
@@ -79,24 +72,30 @@ class GameManager {
     nextState();
     println("game setup done");
   }
+  
   public void gameSetup() {
     menu.display();
   }
   
-  public void playGame() {
-    currState = gameState.GAME_ENDING;
-    println("play game");
+  public void playGameFunc() {
+    
+    //menu = new PlayGameMenu();
+    nextState();
   }
   
-  public void gameEnding() {
+  public void playGame() {
+    //will have the full game here until lose
+    //menu.display();
+    nextState();
+  }
+  
+  public void gameEndFunc() {
     //leaderBoard.add(scoreManager.getScore(), currUser.getName);
-    currState = gameState.GAME_END;
-    println("game ending done");
+    menu = new LeaderboardMenu(leaderboard);
+    nextState();
   }
   
   public void gameEnd() {
-    //leaderboard.display();
-    currState = gameState.GAME_START;
-    println("game end done");
+    menu.display();
   }
 }
