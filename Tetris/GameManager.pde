@@ -3,6 +3,7 @@ enum gameState { GAME_START, GAME_SETUP, GAME_PLAYING, GAME_ENDING, GAME_END, GA
 class GameManager {
   Player currUser;
   ScoreManager scoreManager = new ScoreManager();
+  ScreenManager menu;
   //Map map = new Map();
   //LeaderBoard leaderBoard = new LeaderBoard();
   
@@ -12,9 +13,13 @@ class GameManager {
   public GameManager() {
     
   }
+  public ScreenManager getScreen() {
+    return menu;
+  }
   public void setState(gameState newState) {
     currState = newState; 
   }
+  
   public void nextState() {
     switch (currState) {
       case GAME_START: currState = gameState.GAME_START_MENU; break;
@@ -55,13 +60,13 @@ class GameManager {
   }
   
   public void gameStartFunc() {
-    ScreenManager.startMenuSetup();
+    menu = new StartMenu();
     nextState();
     println("gameStartFunc  Done");
   }
   
   public void gameStart() {
-    ScreenManager.startMenu();
+    menu.display();
   }
   
   
@@ -69,13 +74,13 @@ class GameManager {
     currUser = new Player();
     scoreManager.resetScore();
     //map.reset();
-    ScreenManager.gameSetupMenuSetup();
+    menu = new SetupMenu();
     
     nextState();
     println("game setup done");
   }
   public void gameSetup() {
-    ScreenManager.gameSetup();
+    menu.display();
   }
   
   public void playGame() {

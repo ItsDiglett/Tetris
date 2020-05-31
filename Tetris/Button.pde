@@ -42,7 +42,7 @@ class GenButton extends Button {
     fill(200);
     rect(x,y,w,h);
     fill(0);
-    textAlign(CENTER);
+    textAlign(CENTER, CENTER);
     textSize(25);
     text(word,x,y);
     pop();
@@ -60,7 +60,8 @@ class Initial extends Button {
      rect(x,y,w,h);
      push();
      fill(10);
-     text(initial,x,y);
+     textAlign(CENTER, CENTER);
+     text(initial,x+w/2,y+h/2);
      pop();
   }
   @Override
